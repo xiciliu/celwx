@@ -1,0 +1,56 @@
+.input{
+    padding-left: 10px;
+    height: 44px;
+}
+.inputView{
+    border:  1px solid black;
+    border-radius: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 15px;
+}
+.placeholder2{
+  font-size: 14px;
+}
+.inputView:focus::placeholder{
+  color: red;
+}
+.inputView:hover{
+    border: 1px solid rgb(24, 154, 168);
+}
+.inputView:focus{
+    border: 1px solid rgb(24, 154, 168);
+    place-content: none;
+}
+.buttonView{
+  border-radius: 2px;
+  text-align: center;
+  width: 100px;
+  height: 40px;
+  background-color: rgb(24, 154, 168);
+  color: white;
+  margin: auto;
+  margin-top: 10px;
+}
+.search-button{
+  line-height: 40px;
+  margin-top: 0px;
+}
+
+.select_box {
+    background-color: #eee;
+    padding: 0 10rpx;
+    width: 93%;
+    position: absolute;
+    top: 130rpx;
+    z-index: 1;
+    overflow: hidden;
+    animation: myfirst 0.5s;
+}
+
+
+.select_one {
+    height: 60rpx;
+    line-height: 60rpx;
+    border-bottom: 1px solid #ccc;
+}

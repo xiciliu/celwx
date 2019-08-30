@@ -1,0 +1,6 @@
+<view class="inputView" style="margin-top: 30px ">
+<input class="input" type="string" placeholder="请输入器件名称" placeholder-style="color: black" placeholder-class="placeholder1" bindinput ="userInput"/>
+</view>
+<view class="buttonView">
+<button class="search-button" style="color: white;" bindtap="searchThings"> 查询</button>
+</view>

@@ -1,0 +1,11 @@
+<view class="inputView" style="margin-top: 30px; ">
+<input class="input" type="string" placeholder="请输入器件名称" placeholder-class="placeholder2"  bindinput="userInputName" />
+</view>
+<view class="inputView" style="margin-top: 10px; ">
+<input class="input" type="strings" placeholder="请输入所处位置，中间用'-'分割" placeholder-class="placeholder2" bindinput="userInputLocation" />
+</view>
+
+
+<view class="buttonView">
+<button class="search-button" style="color: white;" bindtap="addThings"> 录入</button>
+</view>
