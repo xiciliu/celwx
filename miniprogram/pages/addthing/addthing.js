@@ -3,45 +3,77 @@ Page({
    * 初始化数据
    */
   data: {
-    phone: '',
-    password: '',
     userInputName:'',
-    userInputLocation:'',
-    select:true,
-    tihuoWay:'书籍'
+    userInputLocation:''
   },
 
-  /**
-   * 监听数据录入
-   */
+  /*数据录入*/
   addThings:function(){
-    const db = wx.cloud.database();
-    db.collection('bmecollect').add({
-      data: {
-        name: this.data.userInputName,
-        location: this.data.userInputLocation
-      }
-    })
-    .then(res => {
-      console.log(res),
+    // 监听是否留空
+    if(this.data.userInputName==''||this.data.userInputLocation==''){
       wx.showToast({
-        title: '录入成功',
-        icon:'success',
-        duration:500
+        title: '输入框存在留空',
+        image:'../../images/error.png',
+        duration: 2000,
+        mask: true
+       });
+    }
+
+    else{
+      const db = wx.cloud.database();
+      // 监听是否有重复录入
+      // 构建查询的正则表达式
+
+      db.collection('bmecollect').where({
+        name: db.RegExp({
+          regexp: this.data.userInputName
+        })
+      }).get({
+        success: res => {
+          console.log(res)
+          wx.showToast({
+            title: '输入重复,请检查'+res.data.location+'位置处',
+            // image:'../../images/error.png',
+            icon:'none',
+            duration: 2000,
+            mask: true
+           });
+        },
+        fali :function(){
+          db.collection('bmecollect').add({
+            data: {
+              name: this.data.userInputName,
+              location: this.data.userInputLocation
+            }
+          })
+          .then(res => {
+            console.log(res),
+            wx.showToast({
+              title: '录入成功',
+              icon:'success',
+              duration:500
+            })
+          })
+            .catch(console.error)
+        }
       })
-    })
-      .catch(console.error)
+
+    }
+    
   },
-  
-  // 监听复选框
-  mySelect:function(e){
-    var name = e.currentTarget.dataset.name
+  // 监听用户输入
+  userInputName: function (e) {
     this.setData({
-      tihuoWay: name,
-      select: false
+      userInputName: e.detail.value
+    })
+  },
+  userInputLocation: function (e) {
+    this.setData({
+      userInputLocation: e.detail.value
     })
   },
 
+ 
 
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
