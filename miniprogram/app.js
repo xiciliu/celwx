@@ -30,7 +30,9 @@ App({
         { value1: '', value2: '', value3:'' },
       ],
       getStringValue1:null,
-      getStringValue:null
+      getStringValue:null,
+      userInputNameConfirm:null,
+      userInputLocationConfirm:null
     }
   }
 })

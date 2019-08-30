@@ -3,7 +3,7 @@
 查询结果
 </view>
 
-<!-- <view class="resultGet resultGet1">
+ <view class="resultGet resultGet1">
   <view class="form1">
     <text>名称：</text> 
     <input class="input input1-1" type="string" name="test" value="{{inputText[0].value1}}"/> 
@@ -32,7 +32,7 @@
     <text>使用手册:</text> 
     <input class="input input1-3" type="string" value="{{inputText[1].value3}}"/>
   </view>
-</view> -->
+</view> 
 
 <text>
 {{getvalue}}

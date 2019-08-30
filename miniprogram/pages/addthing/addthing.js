@@ -1,14 +1,20 @@
+const app = getApp();
 Page({
   /**
    * 初始化数据
    */
+  
   data: {
     userInputName:'',
-    userInputLocation:''
+    userInputLocation:'',
+    clearValue:''
   },
-
+  
   /*数据录入*/
   addThings:function(){
+    app.globalData.userInputNameConfirm=this.data.userInputName;
+    app.globalData.userInputLocationConfirm=this.data.userInputLocation;
+    var that=this;
     // 监听是否留空
     if(this.data.userInputName==''||this.data.userInputLocation==''){
       wx.showToast({
@@ -18,48 +24,59 @@ Page({
         mask: true
        });
     }
-
+   
     else{
       const db = wx.cloud.database();
       // 监听是否有重复录入
       // 构建查询的正则表达式
 
       db.collection('bmecollect').where({
-        name: db.RegExp({
-          regexp: this.data.userInputName
-        })
+        // name: db.RegExp({
+        //   regexp: app.globalData.userInputNameConfirm
+        // })
+        name:app.globalData.userInputNameConfirm
       }).get({
         success: res => {
-          console.log(res)
-          wx.showToast({
-            title: '输入重复,请检查'+res.data.location+'位置处',
-            // image:'../../images/error.png',
-            icon:'none',
-            duration: 2000,
-            mask: true
-           });
-        },
-        fali :function(){
-          db.collection('bmecollect').add({
-            data: {
-              name: this.data.userInputName,
-              location: this.data.userInputLocation
-            }
-          })
-          .then(res => {
-            console.log(res),
-            wx.showToast({
-              title: '录入成功',
-              icon:'success',
-              duration:500
+          console.log(res.data[0].location)
+          if(res.data.length>0){
+            wx.showModal({
+              title: '输入重复未录入',
+              content:'请检查'+res.data[0].location+'位置处',
+              // image:'../../images/error.png',
+              success:function(res){
+                if(res.confirm){
+                  // 清空输入框
+                  that.setData({
+                    userInputName:''
+                  })
+                } else if(res.cancel) {
+  
+                }
+              }
+             });
+          }
+          else{
+          
+            db.collection('bmecollect').add({
+              data: {
+                name: this.data.userInputName,
+                location: this.data.userInputLocation
+              }
             })
-          })
-            .catch(console.error)
-        }
+            .then(res => {
+              console.log(res),
+              wx.showToast({
+                title: '录入成功',
+                icon:'success',
+                duration:500
+              })
+            })
+              .catch(console.error)
+         }
+        },
+      
       })
-
-    }
-    
+    } 
   },
   // 监听用户输入
   userInputName: function (e) {
@@ -73,6 +90,12 @@ Page({
     })
   },
 
+  deletValue:function(){
+    this.setData({
+      userInputName:null
+    })
+    
+  },
  
 
   onLoad: function (options) {
