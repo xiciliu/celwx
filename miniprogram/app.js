@@ -17,6 +17,7 @@ App({
 
     this.globalData = {
       contentvalue:null,
+      contentSelectValue:null,
       inputText: [
         { value1: '', value2: '' ,value3:'' },
         { value1: '', value2: '', value3:'' },

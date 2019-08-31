@@ -1,6 +1,16 @@
-<view class="inputView" style="margin-top: 30px ">
+<form >
+    <view class="inputView" style="margin-top: 30px ">
 <input class="input" type="string" placeholder="请输入器件名称" placeholder-style="color: black" placeholder-class="placeholder1" bindinput ="userInput"/>
 </view>
+<!-- 分类 -->
+<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" class="select-box" start="dasd">
+    <view class="picker">
+    <text class="input-select">{{array[index]}}</text>
+    </view>
+</picker>
 <view class="buttonView">
-<button class="search-button" style="color: white;" bindtap="searchThings"> 查询</button>
+<button class="search-button" style="color: white;" bindtap="searchThings" form-type="reset" > 查询</button>
 </view>
+</form>
+  
+

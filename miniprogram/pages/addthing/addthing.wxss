@@ -2,6 +2,9 @@
     padding-left: 10px;
     height: 44px;
 }
+text{
+  height:44px;
+}
 .inputView{
     border:  1px solid black;
     border-radius: 10px;
@@ -53,4 +56,15 @@
     height: 60rpx;
     line-height: 60rpx;
     border-bottom: 1px solid #ccc;
+}
+
+.select-box{
+   border:  1px solid black;
+    border-radius: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 15px;
+    height:44px;
+    line-height:44px;
+    padding-left:10px;
 }

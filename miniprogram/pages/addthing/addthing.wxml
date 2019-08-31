@@ -6,9 +6,9 @@
 <input class="input" type="strings" placeholder="请输入所处位置，中间用'-'分割" placeholder-class="placeholder2" bindinput="userInputLocation" />
 </view>
 <!-- 分类 -->
-<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-    <view class="picker inputView" style="margin-top: 10px; ">
-    <input class="input" type="strings" placeholder="选择分类" placeholder-class="placeholder2" value="{{array[index]}}" />
+<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" class="select-box">
+    <view class="picker">
+    <text class="input-select">{{array[index]}}</text>
     </view>
 </picker>
 <view class="buttonView">
