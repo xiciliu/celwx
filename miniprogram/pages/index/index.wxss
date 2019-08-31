@@ -1,3 +1,4 @@
+
 .input{
     padding-left: 10px;
     height: 44px;
@@ -11,23 +12,24 @@
 }
 .placeholder1{
   font-size: 14px;
+  color: white;
 }
 .inputView:focus::placeholder{
   color: red;
 }
 .inputView:hover{
-    border: 1px solid rgb(24, 154, 168);
+    border: 1px solid #267CC1;
 }
 .inputView:focus{
-    border: 1px solid rgb(24, 154, 168);
+    border: 1px solid #267CC1;
     place-content: none;
 }
 .buttonView{
-  border-radius: 2px;
+  border-radius: 20px;
   text-align: center;
   width: 100px;
   height: 40px;
-  background-color: rgb(24, 154, 168);
+  background-color: #267CC1;
   color: white;
   margin: auto;
   margin-top: 10px;
@@ -54,4 +56,17 @@ text{
 }
 .picker{
   height:44px;
+}
+page{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+form{
+  width: 100%;
+  height: 100%;
+  background: url('http://image.qianduan.ltd/back-img2.png');
+  
+  /* background:url(http://image.qianduan.ltd/wallhaven-839kvo_1125x2436.png); */
+  background-size: cover;
 }

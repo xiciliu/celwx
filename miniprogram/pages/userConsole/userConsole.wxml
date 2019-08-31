@@ -1,4 +1,6 @@
 <!--pages/userConsole/userConsole.wxml-->
+<form>
+
 <view class="container">
 
   <view class="list">
@@ -20,3 +22,4 @@
   </view>
 
 </view>
+</form>
