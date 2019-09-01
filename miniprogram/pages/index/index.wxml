@@ -1,6 +1,6 @@
 <form >
     <view class="inputView" style="margin-top: 30px ">
-<input class="input" type="string" placeholder="请输入器件名称" placeholder-style="color: black" placeholder-class="placeholder1" bindinput ="userInput"/>
+<input class="input" type="string" placeholder="请输入器件名称" placeholder-style="color: rgb(112, 160, 189)" placeholder-class="placeholder1" bindinput ="userInput"/>
 </view>
 <!-- 分类 -->
 <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" class="select-box" start="dasd">

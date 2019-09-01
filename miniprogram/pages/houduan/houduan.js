@@ -1,4 +1,4 @@
-// pages/sort/sort.js
+// pages/houduan/houduan.js
 Page({
 
   /**
@@ -62,25 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  qianduan:function(){
-    wx.navigateTo({
-      url: '../qianduan/qianduan'
-    })
-  },
-  houduan:function(){
-    wx.navigateTo({
-      url: '../houduan/houduan'
-    })
-  },
-  yingjian:function(){
-    wx.navigateTo({
-      url: '../yingjian/yingjian'
-    })
-  },
-  ai:function(){
-    wx.navigateTo({
-      url: '../ai/ai'
-    })
   }
 })

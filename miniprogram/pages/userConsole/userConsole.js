@@ -6,8 +6,6 @@ Page({
   },
 
   onLoad: function (options) {
-    this.setData({
-      openid: getApp().globalData.openid
-    })
+    
   }
 })

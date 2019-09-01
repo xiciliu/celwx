@@ -6,7 +6,7 @@ text{
   height:44px;
 }
 .inputView{
-    border:  1px solid black;
+    border:  1px solid rgb(112, 160, 189);
     border-radius: 10px;
     margin-left: 15px;
     margin-right: 15px;
@@ -14,15 +14,16 @@ text{
 }
 .placeholder2{
   font-size: 14px;
+  color: rgb(112, 160, 189);
 }
 .inputView:focus::placeholder{
   color: red;
 }
 .inputView:hover{
-    border: 1px solid rgb(24, 154, 168);
+    border: 1px solid #267CC1;
 }
 .inputView:focus{
-    border: 1px solid rgb(24, 154, 168);
+    border: 1px solid #267CC1;
     place-content: none;
 }
 .buttonView{
@@ -59,7 +60,7 @@ text{
 }
 
 .select-box{
-   border:  1px solid black;
+   border:  1px solid rgb(112, 160, 189);
     border-radius: 10px;
     margin-left: 15px;
     margin-right: 15px;
@@ -67,6 +68,8 @@ text{
     height:44px;
     line-height:44px;
     padding-left:10px;
+    color: rgb(112, 160, 189);
+    font-size: 14px;
 }
 page{
   width: 100%;
