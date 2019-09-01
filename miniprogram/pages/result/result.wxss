@@ -3,33 +3,30 @@
   width: 100%;
   height: 40px;
   line-height: 40px;
-  border-bottom: 1px solid #189aa8;
-  background: #189aa8;
+  border-top: 1px solid rgb(112, 160, 189);
+  background: #2B5565;
   color: white;
   padding-left: 10px;
   font-size: 14px;
 }
-text{
+
+.resultGet{
+  width: 90%;
+  border: 1px solid #267CC1;
+  margin: 5px;
+  border-radius: 2px;
+  height: 60px;
+  border-radius: 5px;
+  background-color: #267CC1;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.nameValue,.locationValue{
   font-size: 13px;
   margin-left: 10px;
   height: 24px;
-  width: 30%;
   line-height: 24px;
-}
-.input{
-  display: inline-block;
-  border-bottom: 1px solid #e0f0e9;
-  font-size: 14px;
-  margin-left: 5px;
-}
-.resultGet{
-
-  border: 1px solid #48c0a3;
-  margin: 5px;
-  border-radius: 2px;
-}
-.form1{
-  display: inline-block;
-  vertical-align: bottom;
-
+  height: 30px;
+  color: white;
 }

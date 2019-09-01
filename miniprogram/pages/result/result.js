@@ -6,13 +6,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    bottomHidden1:'none',
+    languageList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      languageList:[]
+  });
     // console.log(app.globalData.contentValue);
     const db = wx.cloud.database();
     //////////////////////////////////////////
@@ -28,17 +32,36 @@ Page({
       }).get({
         success: res => {
           //返回查询到的数据
-          console.log(res.data);
+          // console.log(res.data);
           const k = res.data.length;
-          console.log(k);
-          //实现数据的显示
+          // console.log(k);
+          //实现数据的显示,实质上是循环加数组
+          if(k==0){
+            wx.showModal({
+              content: '未查询到内容请检查输入',
+              success(res){
+                if(res.confirm){
+                  wx.navigateBack({
+                    delta: 1
+                })
+                }else if (res.cancel) {
+                  wx.navigateBack({
+                    delta: 1
+                })
+                }
+              }
+            });
+          }
           for (let i = 0; i < k; i++) {
+            var newarray=[{
+              id:i,
+              name:res.data[i].name,
+              location:res.data[i].location,
+            }]
+            this.data.languageList = newarray.concat(this.data.languageList);
             this.setData({
-              // getStringValue1:k+'0',
-              // getStringValue=concat('')
-              'inputText[0].value1': res.data[i].name,
-              'inputText[0].value2': res.data[i].location
-            })
+              'languageList':this.data.languageList
+         });
           }
 
         },
@@ -62,17 +85,36 @@ Page({
       }).get({
         success: res => {
           //返回查询到的数据
-          console.log(res.data);
+          // console.log(res.data);
           const k = res.data.length;
-          console.log(k);
+          // console.log(k);
+          if(k==0){
+            wx.showModal({
+              content: '未查询到内容请检查输入',
+              success(res){
+                if(res.confirm){
+                  wx.navigateBack({
+                    delta: 1
+                })
+                }else if (res.cancel) {
+                  wx.navigateBack({
+                    delta: 1
+                })
+                }
+              }
+            });
+          }
           //实现数据的显示
           for (let i = 0; i < k; i++) {
+            var newarray=[{
+              id:i,
+              name:res.data[i].name,
+              location:res.data[i].location,
+            }]
+            this.data.languageList = newarray.concat(this.data.languageList);
             this.setData({
-              // getStringValue1:k+'0',
-              // getStringValue=concat('')
-              'inputText[0].value1': res.data[i].name,
-              'inputText[0].value2': res.data[i].location
-            })
+              'languageList':this.data.languageList
+         });
           }
 
         },
@@ -96,17 +138,36 @@ Page({
       }).get({
         success: res => {
           //返回查询到的数据
-          console.log(res.data);
+          // console.log(res.data);
           const k = res.data.length;
-          console.log(k);
+          // console.log(k);
+          if(k==0){
+            wx.showModal({
+              content: '未查询到内容请检查输入',
+              success(res){
+                if(res.confirm){
+                  wx.navigateBack({
+                    delta: 1
+                })
+                }else if (res.cancel) {
+                  wx.navigateBack({
+                    delta: 1
+                })
+                }
+              }
+            });
+          }
           //实现数据的显示
           for (let i = 0; i < k; i++) {
+            var newarray=[{
+              id:i,
+              name:res.data[i].name,
+              location:res.data[i].location,
+            }]
+            this.data.languageList = newarray.concat(this.data.languageList);
             this.setData({
-              // getStringValue1:k+'0',
-              // getStringValue=concat('')
-              'inputText[0].value1': res.data[i].name,
-              'inputText[0].value2': res.data[i].location
-            })
+              'languageList':this.data.languageList
+         });
           }
 
         },
@@ -130,17 +191,36 @@ Page({
       }).get({
         success: res => {
           //返回查询到的数据
-          console.log(res.data);
+          // console.log(res.data);
           const k = res.data.length;
-          console.log(k);
+          // console.log(k);
+          if(k==0){
+            wx.showModal({
+              content: '未查询到内容请检查输入',
+              success(res){
+                if(res.confirm){
+                  wx.navigateBack({
+                    delta: 1
+                })
+                }else if (res.cancel) {
+                  wx.navigateBack({
+                    delta: 1
+                })
+                }
+              }
+            });
+          }
           //实现数据的显示
           for (let i = 0; i < k; i++) {
+            var newarray=[{
+              id:i,
+              name:res.data[i].name,
+              location:res.data[i].location,
+            }]
+            this.data.languageList = newarray.concat(this.data.languageList);
             this.setData({
-              // getStringValue1:k+'0',
-              // getStringValue=concat('')
-              'inputText[0].value1': res.data[i].name,
-              'inputText[0].value2': res.data[i].location
-            })
+              'languageList':this.data.languageList
+         });
           }
 
         },
@@ -164,17 +244,36 @@ Page({
       }).get({
         success: res => {
           //返回查询到的数据
-          console.log(res.data);
+          // console.log(res.data);
           const k = res.data.length;
-          console.log(k);
+          // console.log(k);
+          if(k==0){
+            wx.showModal({
+              content: '未查询到内容请检查输入',
+              success(res){
+                if(res.confirm){
+                  wx.navigateBack({
+                    delta: 1
+                })
+                }else if (res.cancel) {
+                  wx.navigateBack({
+                    delta: 1
+                })
+                }
+              }
+            });
+          }
           //实现数据的显示
           for (let i = 0; i < k; i++) {
+            var newarray=[{
+              id:i,
+              name:res.data[i].name,
+              location:res.data[i].location,
+            }]
+            this.data.languageList = newarray.concat(this.data.languageList);
             this.setData({
-              // getStringValue1:k+'0',
-              // getStringValue=concat('')
-              'inputText[0].value1': res.data[i].name,
-              'inputText[0].value2': res.data[i].location
-            })
+              'languageList':this.data.languageList
+         });
           }
 
         },
@@ -198,18 +297,38 @@ Page({
       }).get({
         success: res => {
           //返回查询到的数据
-          console.log(res.data);
+          // console.log(res.data);
           const k = res.data.length;
-          console.log(k);
+          // console.log(k);
+          if(k==0){
+            wx.showModal({
+              content: '未查询到内容请检查输入',
+              success(res){
+                if(res.confirm){
+                  wx.navigateBack({
+                    delta: 1
+                })
+                }else if (res.cancel) {
+                  wx.navigateBack({
+                    delta: 1
+                })
+                }
+              }
+            });
+          }
           //实现数据的显示
           for (let i = 0; i < k; i++) {
+            var newarray=[{
+              id:i,
+              name:res.data[i].name,
+              location:res.data[i].location,
+            }]
+            this.data.languageList = newarray.concat(this.data.languageList);
             this.setData({
-              // getStringValue1:k+'0',
-              // getStringValue=concat('')
-              'inputText[0].value1': res.data[i].name,
-              'inputText[0].value2': res.data[i].location
-            })
+              'languageList':this.data.languageList
+         });
           }
+           
 
         },
         fail: err => {
@@ -232,17 +351,36 @@ Page({
       }).get({
         success: res => {
           //返回查询到的数据
-          console.log(res.data);
+          // console.log(res.data);
           const k = res.data.length;
-          console.log(k);
+          // console.log(k);
+          if(k==0){
+            wx.showModal({
+              content: '未查询到内容请检查输入',
+              success(res){
+                if(res.confirm){
+                  wx.navigateBack({
+                    delta: 1
+                })
+                }else if (res.cancel) {
+                  wx.navigateBack({
+                    delta: 1
+                })
+                }
+              }
+            });
+          }
           //实现数据的显示
           for (let i = 0; i < k; i++) {
+            var newarray=[{
+              id:i,
+              name:res.data[i].name,
+              location:res.data[i].location,
+            }]
+            this.data.languageList = newarray.concat(this.data.languageList);
             this.setData({
-              // getStringValue1:k+'0',
-              // getStringValue=concat('')
-              'inputText[0].value1': res.data[i].name,
-              'inputText[0].value2': res.data[i].location
-            })
+              'languageList':this.data.languageList
+         });
           }
 
         },
@@ -266,17 +404,36 @@ Page({
       }).get({
         success: res => {
           //返回查询到的数据
-          console.log(res.data);
+          // console.log(res.data);
           const k = res.data.length;
-          console.log(k);
+          // console.log(k);
+          if(k==0){
+            wx.showModal({
+              content: '未查询到内容请检查输入',
+              success(res){
+                if(res.confirm){
+                  wx.navigateBack({
+                    delta: 1
+                })
+                }else if (res.cancel) {
+                  wx.navigateBack({
+                    delta: 1
+                })
+                }
+              }
+            });
+          }
           //实现数据的显示
           for (let i = 0; i < k; i++) {
+            var newarray=[{
+              id:i,
+              name:res.data[i].name,
+              location:res.data[i].location,
+            }]
+            this.data.languageList = newarray.concat(this.data.languageList);
             this.setData({
-              // getStringValue1:k+'0',
-              // getStringValue=concat('')
-              'inputText[0].value1': res.data[i].name,
-              'inputText[0].value2': res.data[i].location
-            })
+              'languageList':this.data.languageList
+         });
           }
 
         },
@@ -310,7 +467,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+   
   },
 
   /**

@@ -1,39 +1,11 @@
-<!--miniprogram/pages/result/result.wxml-->
-<view class="title">
-查询结果
-</view>
-
- <view class="resultGet resultGet1">
-  <view class="form1">
-    <text>名称：</text> 
-    <input class="input input1-1" type="string" name="test" value="{{inputText[0].value1}}"/> 
+<!-- miniprogram/pages/result/result.wxml -->
+<view class="title">查询结果</view>
+<view wx:for='{{languageList}}' class='resultGet' data-name='{{item.name}}' data-id='{{item.id}}'>
+  <view class='nameValue'>
+    <text>名字：{{item.name}}</text>
   </view>
-  <view class="form1">
-    <text>位置：</text> 
-    <input class="input input1-2" type="string" value="{{inputText[0].value2}}"/>
-  </view>
-  <view class="form1">
-    <text>使用手册:</text> 
-    <input class="input input1-3" type="string" value="{{inputText[0].value3}}"/>
+  <view class='locationValue'>
+    <text>位置：{{item.location}}</text>
   </view>
 </view>
-
-
-<view class="resultGet resultGet2">
-  <view class="form1">
-    <text>名称：</text> 
-    <input class="input input1-1" type="string" name="test" value="{{inputText[1].value1}}"/> 
-  </view>
-  <view class="form1">
-    <text>位置：</text> 
-    <input class="input input1-2" type="string" value="{{inputText[1].value2}}"/>
-  </view>
-  <view class="form1">
-    <text>使用手册:</text> 
-    <input class="input input1-3" type="string" value="{{inputText[1].value3}}"/>
-  </view>
-</view> 
-
-<text>
-{{getvalue}}
-</text>
+<text>{{getvalue}}</text>
