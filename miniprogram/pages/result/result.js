@@ -21,7 +21,7 @@ Page({
     const db = wx.cloud.database();
     //////////////////////////////////////////
     // 书籍查询
-    if (app.globalData.contentSelectValue = 1) {
+    if (app.globalData.contentSelectValue == 1) {
       db.collection('celBook').where({
         name: db.RegExp({
           regexp: app.globalData.contentValue,
@@ -74,7 +74,7 @@ Page({
 
     //////////////////////////////////////////
     // 仪器仪表查询
-    if (app.globalData.contentSelectValue = 2) {
+    if (app.globalData.contentSelectValue == 2) {
       db.collection('celInstruent').where({
         name: db.RegExp({
           regexp: app.globalData.contentValue,
@@ -127,7 +127,7 @@ Page({
 
     //////////////////////////////////////////
     // 电容电感电阻
-    if (app.globalData.contentSelectValue = 3) {
+    if (app.globalData.contentSelectValue == 3) {
       db.collection('RLC').where({
         name: db.RegExp({
           regexp: app.globalData.contentValue,
@@ -140,7 +140,7 @@ Page({
           //返回查询到的数据
           // console.log(res.data);
           const k = res.data.length;
-          // console.log(k);
+          console.log(k);
           if(k==0){
             wx.showModal({
               content: '未查询到内容请检查输入',
@@ -180,7 +180,7 @@ Page({
 
     //////////////////////////////////////////
     // 通用器件
-    if (app.globalData.contentSelectValue = 4) {
+    if (app.globalData.contentSelectValue == 4) {
       db.collection('celGeneral').where({
         name: db.RegExp({
           regexp: app.globalData.contentValue,
@@ -193,7 +193,7 @@ Page({
           //返回查询到的数据
           // console.log(res.data);
           const k = res.data.length;
-          // console.log(k);
+          console.log(k);
           if(k==0){
             wx.showModal({
               content: '未查询到内容请检查输入',
@@ -233,7 +233,7 @@ Page({
 
     //////////////////////////////////////////
     //  芯片存储器
-    if (app.globalData.contentSelectValue = 5) {
+    if (app.globalData.contentSelectValue == 5) {
       db.collection('celIC').where({
         name: db.RegExp({
           regexp: app.globalData.contentValue,
@@ -246,7 +246,7 @@ Page({
           //返回查询到的数据
           // console.log(res.data);
           const k = res.data.length;
-          // console.log(k);
+          console.log(k);
           if(k==0){
             wx.showModal({
               content: '未查询到内容请检查输入',
@@ -286,7 +286,7 @@ Page({
 
     //////////////////////////////////////////
     // 传感器
-    if (app.globalData.contentSelectValue = 6) {
+    if (app.globalData.contentSelectValue == 6) {
       db.collection('celTransor').where({
         name: db.RegExp({
           regexp: app.globalData.contentValue,
@@ -299,7 +299,7 @@ Page({
           //返回查询到的数据
           // console.log(res.data);
           const k = res.data.length;
-          // console.log(k);
+          console.log(k);
           if(k==0){
             wx.showModal({
               content: '未查询到内容请检查输入',
@@ -340,7 +340,7 @@ Page({
 
     //////////////////////////////////////////
     // 工具/辅材/线材/五金 
-    if (app.globalData.contentSelectValue = 7) {
+    if (app.globalData.contentSelectValue == 7) {
       db.collection('celTool').where({
         name: db.RegExp({
           regexp: app.globalData.contentValue,
@@ -353,7 +353,7 @@ Page({
           //返回查询到的数据
           // console.log(res.data);
           const k = res.data.length;
-          // console.log(k);
+          console.log(k);
           if(k==0){
             wx.showModal({
               content: '未查询到内容请检查输入',
@@ -393,7 +393,7 @@ Page({
 
     //////////////////////////////////////////
     // 开发板录入
-    if (app.globalData.contentSelectValue = 8) {
+    if (app.globalData.contentSelectValue == 8) {
       db.collection('celBoard').where({
         name: db.RegExp({
           regexp: app.globalData.contentValue,
@@ -406,7 +406,7 @@ Page({
           //返回查询到的数据
           // console.log(res.data);
           const k = res.data.length;
-          // console.log(k);
+          console.log(k);
           if(k==0){
             wx.showModal({
               content: '未查询到内容请检查输入',

@@ -76,7 +76,6 @@ Page({
       console.log(app.globalData.contentValue);
       // 清空输入框
       that.data.userInput = '';
-      app.globalData.userSelectValue = '';
       wx.navigateTo({
         url: '../result/result'
       })
