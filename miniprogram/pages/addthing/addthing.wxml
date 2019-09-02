@@ -14,4 +14,8 @@
 <view class="buttonView">
 <button  form-type="reset" class="search-button" style="color: white;" bindtap="addThings"> 录入</button>
 </view>
+<view class="tishi">
+<text class="point1" bindtap="deleteValue">录错/修改点我</text>
+</view>
+
 </form>

@@ -1,0 +1,28 @@
+<form>
+<view class="inputView" style="margin-top: 30px; ">
+<input class="input" type="string" placeholder="请输入器件名称" placeholder-class="placeholder2"  bindinput="userInputName" />
+</view>
+<!-- 分类 -->
+<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" class="select-box">
+    <view class="picker">
+    <text class="input-select">{{array[index]}}</text>
+    </view>
+</picker>
+<view class="buttonView">
+<button  form-type="reset" class="search-button" style="color: white;" bindtap="deletThings"> 查询</button>
+</view>
+<view wx:for='{{languageList}}' class='resultGet' data-name='{{item.name}}' data-id='{{item.id}}'>
+<view class="lie1">
+  <view class='nameValue'>
+    <text>名字：{{item.name}}</text>
+  </view>
+  <view class='locationValue'>
+    <text>位置：{{item.location}}</text>
+  </view>
+  </view>
+  <view class="lie2" bindtap="deleteValue" id='{{item.id}}' data-text="{{item.name}}">
+      删除
+  </view>
+    
+</view>
+</form>

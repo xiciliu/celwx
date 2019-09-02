@@ -516,5 +516,11 @@ Page({
   },
   onUnload: function () {
     // 页面关闭
+  },
+  // 跳转删除页面
+  deleteValue:function(){
+    wx.navigateTo({
+      url: '../delete/delete'
+    })
   }
 })

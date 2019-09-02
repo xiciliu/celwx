@@ -94,3 +94,35 @@ form{
   margin-right: 10px;
   margin-left: 10px;
 }
+.resultGet{
+    width: 90%;
+    border: 1px solid #267CC1;
+    margin: 5px;
+    border-radius: 2px;
+    height: 60px;
+    border-radius: 5px;
+    background-color: #267CC1;
+    margin: auto;
+    margin-top: 10px;
+  }
+  
+  .nameValue,.locationValue{
+    font-size: 13px;
+    margin-left: 10px;
+    height: 24px;
+    line-height: 24px;
+    height: 30px;
+    color: white;
+  }
+  .lie1{
+      width: 84%;
+      display: inline-block;
+  }
+  .lie2{
+    width: 15%;
+    display: inline-block;
+    height: 60px;
+    line-height: 60px;
+    vertical-align: top;
+    color: red;
+  }

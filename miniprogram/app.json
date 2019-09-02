@@ -1,9 +1,10 @@
 {
   "pages": [
-
+    "pages/delete/delete",
+"pages/addthing/addthing",
     "pages/index/index",
     "pages/sort/sort",
-    "pages/addthing/addthing",
+    
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
     "pages/databaseGuide/databaseGuide",
@@ -22,6 +23,7 @@
     "pages/houduan/houduan",
     "pages/yingjian/yingjian",
     "pages/ai/ai"
+    
   ],
   "window": {
     "backgroundColor": "#2B5565",

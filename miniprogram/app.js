@@ -34,7 +34,8 @@ App({
       getStringValue:null,
       userInputNameConfirm:null,
       userInputLocationConfirm:null,
-      userSelectValue:null
+      userSelectValue:null,
+      deletValue:null,
     }
   }
 })
