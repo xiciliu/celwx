@@ -511,21 +511,294 @@ Page({
     }
   },
   deleteValue:function(e){
+    const that = this;
     // 获取这个节点的全名
-    var viewId = e.target.id;
     var viewDataSet = e.target.dataset;
     // console.log(viewId); //输出点击的view的id，第二种情况就不重复写了
-    console.log(viewDataSet.text); //输出该文本、
-    const db = wx.cloud.database();
-    if(app.globalData.userSelectValue==1){
-      db.collection('celBook').where({
-        name: db.RegExp({
-          regexp: app.globalData.deletValue,
-          //从搜索栏中获取的value作为规则进行匹配。
-          options: 'i',
-          //大小写不区分
+    console.log(viewDataSet.text); 
+    // 获取分类名 来决定检索的数据库
+    let sortName = app.globalData.userSelectValue;
+    // console.log(viewDataSet.id); //输出该文本
+    // console.log(app.globalData.userSelectValue)
+    wx.showModal({
+      content: '确认删除',
+      success(res) {
+        if (res.confirm) {
+// 进行celbook数据库检索并删除
+          if (sortName == 1) {
+
+            const db = wx.cloud.database();
+            db.collection('celBook').where({
+              name: viewDataSet.text
+            }).get({
+              success: res => {
+                wx.cloud.callFunction({
+                  // 需修改
+                  name: 'delCelBook',
+                  data: {
+                    DataId: res.data[0]._id,
+                  },
+                  success: res => {
+                    wx.showToast({
+                      title: '删除成功',
+                      icon: 'success',
+                      duration: 500
+                    })
+                    that.setData({
+                      'languageList': null
+                    })
+                  }
+                })
+
+                // 重复录入则提示已存在的位置
+              }
+            })
+          }
+      ////////////////////////////////////////////////////
+      /*
+      仪器仪表录入
+      */
+      ////////
+
+      if (sortName == 2) {
+
+        const db = wx.cloud.database();
+        db.collection('celInstruent').where({
+          name: viewDataSet.text
+        }).get({
+          success: res => {
+            wx.cloud.callFunction({
+              // 需修改
+              name: 'delcelInstruent',
+              data: {
+                DataId: res.data[0]._id,
+              },
+              success: res => {
+                wx.showToast({
+                  title: '删除成功',
+                  icon: 'success',
+                  duration: 500
+                })
+                that.setData({
+                  'languageList': null
+                })
+              }
+            })
+
+            // 重复录入则提示已存在的位置
+          }
         })
-      })
-    }
+      }
+      ////////////////////////////////////////////////////
+      /*
+      电容电感电阻
+      */
+      ///////////////
+
+      if (sortName == 3) {
+
+        const db = wx.cloud.database();
+        db.collection('RLC').where({
+          name: viewDataSet.text
+        }).get({
+          success: res => {
+            wx.cloud.callFunction({
+              // 需修改
+              name: 'delRLC',
+              data: {
+                DataId: res.data[0]._id,
+              },
+              success: res => {
+                wx.showToast({
+                  title: '删除成功',
+                  icon: 'success',
+                  duration: 500
+                })
+                that.setData({
+                  'languageList': null
+                })
+              }
+            })
+
+            // 重复录入则提示已存在的位置
+          }
+        })
+      }
+      ////////////////////////////////////////////////////
+      /*
+      通用器件
+      */
+      ///////////////////////
+      if (sortName == 4) {
+
+        const db = wx.cloud.database();
+        db.collection('celGeneral').where({
+          name: viewDataSet.text
+        }).get({
+          success: res => {
+            wx.cloud.callFunction({
+              // 需修改
+              name: 'delcelGeneral',
+              data: {
+                DataId: res.data[0]._id,
+              },
+              success: res => {
+                wx.showToast({
+                  title: '删除成功',
+                  icon: 'success',
+                  duration: 500
+                })
+                that.setData({
+                  'languageList': null
+                })
+              }
+            })
+            // 重复录入则提示已存在的位置
+          }
+        })
+      }
+      ////////////////////////////////////////////////////
+      /*
+      芯片存储器
+      */
+      //////////////
+      if (sortName == 5) {
+
+        const db = wx.cloud.database();
+        db.collection('celIC').where({
+          name: viewDataSet.text
+        }).get({
+          success: res => {
+            wx.cloud.callFunction({
+              // 需修改
+              name: 'delcelIC',
+              data: {
+                DataId: res.data[0]._id,
+              },
+              success: res => {
+                wx.showToast({
+                  title: '删除成功',
+                  icon: 'success',
+                  duration: 500
+                })
+                that.setData({
+                  'languageList': null
+                })
+              }
+            })
+                        // 重复录入则提示已存在的位置
+          }
+        })
+      }
+      ////////////////////////////////////////////////////
+      /*
+      传感器
+      */
+      /////////////////////////
+      if (sortName == 6) {
+
+        const db = wx.cloud.database();
+        db.collection('celTransor').where({
+          name: viewDataSet.text
+        }).get({
+          success: res => {
+            wx.cloud.callFunction({
+              // 需修改
+              name: 'delcelTransor',
+              data: {
+                DataId: res.data[0]._id,
+              },
+              success: res => {
+                wx.showToast({
+                  title: '删除成功',
+                  icon: 'success',
+                  duration: 500
+                })
+                that.setData({
+                  'languageList': null
+                })
+              }
+            })
+                        // 重复录入则提示已存在的位置
+          }
+        })
+      }
+     ////////////////////////////////////////////////////
+      /*
+      工具/辅材/线材/五金 
+      */
+      ///////////////////////
+
+      if (sortName == 7) {
+
+        const db = wx.cloud.database();
+        db.collection('celTool').where({
+          name: viewDataSet.text
+        }).get({
+          success: res => {
+            wx.cloud.callFunction({
+              // 需修改
+              name: 'delcelTool',
+              data: {
+                DataId: res.data[0]._id,
+              },
+              success: res => {
+                wx.showToast({
+                  title: '删除成功',
+                  icon: 'success',
+                  duration: 500
+                })
+                that.setData({
+                  'languageList': null
+                })
+              }
+            })
+                        // 重复录入则提示已存在的位置
+          }
+        })
+      }
+      ////////////////////////////////////////////////////
+      /*
+      开发板录入
+      */
+      ///////////////////
+
+      if (sortName == 8) {
+
+        const db = wx.cloud.database();
+        db.collection('celBoard').where({
+          name: viewDataSet.text
+        }).get({
+          success: res => {
+            wx.cloud.callFunction({
+              // 需修改
+              name: 'delcelBoard',
+              data: {
+                DataId: res.data[0]._id,
+              },
+              success: res => {
+                wx.showToast({
+                  title: '删除成功',
+                  icon: 'success',
+                  duration: 500
+                })
+                that.setData({
+                  'languageList': null
+                })
+              }
+            })
+            // 重复录入则提示已存在的位置
+          }
+        })
+      }
+} else if (res.cancel) {
+          that.setData({
+            'languageList': null
+          })
+        }
+      }
+    });
+    //   不知道为什么没法把数据库名作为参数进行传输 未解决
+
   }
 })

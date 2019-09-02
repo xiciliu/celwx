@@ -10,7 +10,7 @@
     </view>
 
     <view class="line">
-        <view class="downStudy block3" bindtap="yingjianduan">
+        <view class="downStudy block3" bindtap="yingjian">
             <text>硬件资料</text>
         </view >
         <view class="downStudy block4" bindtap="ai">

@@ -20,7 +20,7 @@
     <text>位置：{{item.location}}</text>
   </view>
   </view>
-  <view class="lie2" bindtap="deleteValue" id='{{item.id}}' data-text="{{item.name}}">
+  <view class="lie2" bindtap="deleteValue" data-id='{{item.id}}' data-text="{{item.name}}">
       删除
   </view>
     
